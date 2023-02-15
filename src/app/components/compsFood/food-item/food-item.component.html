@@ -1,0 +1,35 @@
+<mat-accordion>
+    <mat-expansion-panel class="panel">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                <i *ngIf="food.type === 'Comida'" class="fa-solid fa-utensils icon"></i>
+                <i *ngIf="food.type === 'Bebida'" class="fa-solid fa-mug-saucer icon"></i>
+                <h2 class="title">{{food.name}}</h2>
+            </mat-panel-title>
+            <mat-panel-description class="description">{{food.type}}</mat-panel-description>
+        </mat-expansion-panel-header>
+        <div class="panel-content row">
+            <div class="col-2 content">
+                <h2>Cantidad</h2>
+                <p>{{food.cantidad}}</p>
+            </div>
+            <div class="col-10 content" *ngIf="food.description !== undefined">
+                <h2>Descripción</h2>
+                <p>{{food.description}}</p>
+            </div>
+            <div class="col-10 content">
+                <h2>Horario</h2>
+                <p *ngIf="time">{{time.name}}</p>
+            </div>
+            <div class="col-12 content">
+                <button class="button" mat-flat-button color="accent">Editar</button>
+                <button 
+                    class="button" 
+                    mat-flat-button 
+                    color="warn" 
+                    (click)="openDialog(food.name, food.id)"
+                >Eliminar</button>
+            </div>
+        </div>
+    </mat-expansion-panel>
+</mat-accordion>

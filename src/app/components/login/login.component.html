@@ -1,0 +1,61 @@
+<div class="container-form">
+    <div class="container-title">
+        <h2 class="form-title">LOGIN</h2>
+    </div>
+    <form 
+        [formGroup]="form" 
+        class="form-group" 
+        (submit)="onSubmit()"
+    >
+        <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input 
+                formControlName="email" 
+                matInput 
+                type="email" 
+                placeholder="example@example.com"
+            >
+        </mat-form-field>
+        
+        <!-- ERROR MAIL -->
+            <div class="error-container" *ngIf="Email?.errors && Email?.touched">
+                <mat-error 
+                    class="error" 
+                    *ngIf="Email?.hasError('required')"
+                >Ingrese su email</mat-error>
+                <mat-error 
+                    class="error" 
+                    *ngIf="Email?.hasError('email')"
+                >Ingrese un email válido</mat-error>
+            </div>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input 
+                formControlName="password" 
+                matInput 
+                type="password" 
+                placeholder="Password"
+            >
+        </mat-form-field>
+
+        <!-- ERROR PASSWORD -->
+            <div class="error-container" *ngIf="Password?.errors && Password?.touched">
+                <mat-error 
+                    class="error" 
+                    *ngIf="Password?.hasError('required')"
+                >Ingrese su contraseña</mat-error>
+            </div>
+
+        <button 
+            mat-flat-button 
+            color="primary" 
+            class="form-button" 
+            type="submit"
+        >INGRESAR</button>
+    </form>
+    <div class="container-footer">
+        <p>¿No estás registrado? <a routerLink="/register">Registrate ahora</a></p>
+        <a routerLink="/about">Acerca de</a>
+    </div>
+</div>

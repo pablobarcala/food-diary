@@ -1,0 +1,14 @@
+.container-home {
+    border-radius: 5px;
+    width: 70%;
+    margin: 2rem auto;
+    background-color: rgb(233, 233, 233);
+}
+
+@media (max-width: 500px) {
+    .container-home {
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+    }
+}

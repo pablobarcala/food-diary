@@ -1,0 +1,29 @@
+.panel {
+    margin-bottom: 0.5rem;
+}
+
+.icon {
+    margin-right: 1rem;
+}
+
+.title {
+    font-size: 1rem;
+}
+
+.description {
+    text-transform: capitalize;
+}
+
+.panel-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.content {
+    margin-bottom: 1rem;
+}
+
+.button {
+    margin-right: 1rem;
+}

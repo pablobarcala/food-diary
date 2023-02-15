@@ -1,0 +1,63 @@
+<div class="container">
+    <form [formGroup]="form" (submit)="onSubmit()">
+        <div class="row">
+            <mat-form-field appearance="outline" class="col-4">
+                <mat-label>Nombre</mat-label>
+                <input matInput type="text" formControlName="name" placeholder="Ej: Agua">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="col-4">
+                <mat-label>Tipo</mat-label>
+                <mat-select formControlName="type">
+                    <mat-option value="Comida">Comida</mat-option>
+                    <mat-option value="Bebida">Bebida</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="col-4">
+                <mat-label>Cantidad</mat-label>
+                <input matInput type="text" formControlName="cantidad" placeholder="Ej: 2 vasos">
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="outline" class="col-6">
+                <mat-label>Fecha</mat-label>
+                <input 
+                matInput 
+                [matDatepicker]="picker" 
+                formControlName="date"
+                placeholder="Ej: 14/02/2023"
+                >
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+                <mat-hint>mm/dd/yyyy</mat-hint>
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="col-6">
+                <mat-label>Horario</mat-label>
+                <mat-select formControlName="timeRef">
+                    <mat-option
+                    *ngFor="let time of times" 
+                    value="{{time.id}}"
+                    >{{time.timeStart}} - {{time.timeEnd}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="outline" class="col">
+                <mat-label>Descripción</mat-label>
+                <input 
+                    matInput 
+                    type="text" 
+                    formControlName="description" 
+                    placeholder="Ej: Tomé en el almuerzo"
+                >
+            </mat-form-field>
+        </div>
+        <div class="container-button">
+            <button 
+                class="button" 
+                mat-raised-button 
+                type="submit" 
+                color="primary"
+            >AGREGAR</button>
+        </div>
+    </form>
+</div>

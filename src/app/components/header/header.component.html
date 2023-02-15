@@ -1,0 +1,32 @@
+<div class="header-container">
+    <h2 
+        class="header-title"
+        routerLink=""    
+    >Food Diary</h2>
+    <button mat-icon-button [mat-menu-trigger-for]="menu">
+        <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+        <button 
+            mat-menu-item
+            routerLink="new-item"
+        >
+            <mat-icon>add_circle</mat-icon>
+            <span>Agregar</span>
+        </button>
+        <button 
+            mat-menu-item
+            routerLink="times"    
+        >
+            <mat-icon>access_time</mat-icon>
+            <span>Horarios</span>
+        </button>
+        <button 
+            mat-menu-item
+            (click)="onLogout()"
+        >
+            <mat-icon>logout</mat-icon>
+            <span>Logout</span>
+        </button>
+    </mat-menu>
+</div>

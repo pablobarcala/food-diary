@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "food-diary-ef9a2"
+  },
+  "targets": {
+    "food-diary-ef9a2": {
+      "hosting": {
+        "food-diary": [
+          "food-diary-ef9a2"
+        ]
+      }
+    }
+  }
+}

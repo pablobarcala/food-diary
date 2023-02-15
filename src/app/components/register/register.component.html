@@ -1,0 +1,114 @@
+<div class="container-form">
+    <div class="container-title">
+        <h2 class="form-title">REGISTRO</h2>
+    </div>
+    <form 
+        [formGroup]="form" 
+        class="form-group"
+        (submit)="onSubmit()"
+    >
+    <!-- ------------------ NAME ----------------------- -->
+    <div class="field-container">
+        <mat-form-field class="form-field" appearance="outline">
+            <mat-label>Ingrese su nombre</mat-label>
+            <input 
+                formControlName="name" 
+                matInput 
+                type="text" 
+                placeholder="Nombre"
+            >
+        </mat-form-field>
+
+        <!-- ERROR NAME -->
+            <div class="error-container" *ngIf="Name?.errors && Name?.touched">
+                <mat-error 
+                    class="error" 
+                    *ngIf="Name?.hasError('required')"
+                >Ingrese su nombre</mat-error>
+            </div>
+    </div>
+
+    <!-- ------------------ LAST NAME ------------------ -->
+    <div class="field-container">
+        <mat-form-field class="form-field" appearance="outline">
+            <mat-label>Ingrese su apellido</mat-label>
+            <input 
+                formControlName="lastname" 
+                matInput 
+                type="text" 
+                placeholder="Apellido"
+            >
+        </mat-form-field>
+    
+        <!-- ERROR LASTNAME -->
+            <div class="error-container" *ngIf="Lastname?.errors && Lastname?.touched">
+                <mat-error 
+                    class="error" 
+                    *ngIf="Lastname?.hasError('required')"
+                >Ingrese su apellido</mat-error>
+            </div>
+    </div>
+
+    <!-- ------------------ EMAIL ---------------------- -->
+    <div class="field-container">
+        <mat-form-field class="form-field" appearance="outline">
+            <mat-label>Ingrese un email</mat-label>
+            <input 
+                formControlName="email" 
+                matInput 
+                type="email" 
+                placeholder="example@example.com"
+            >
+        </mat-form-field>
+        
+        <!-- ERROR MAIL -->
+            <div class="error-container" *ngIf="Email?.errors && Email?.touched">
+                <mat-error 
+                    class="error" 
+                    *ngIf="Email?.hasError('required')"
+                >Ingrese su email</mat-error>
+                <mat-error 
+                    class="error" 
+                    *ngIf="Email?.hasError('email')"
+                >Ingrese un email válido</mat-error>
+            </div>
+    </div>
+
+    <!-- ----------------- PASSWORD -------------------- -->
+    <div class="field-container">
+        <mat-form-field class="form-field" appearance="outline">
+            <mat-label>Ingrese una contraseña</mat-label>
+            <input 
+                formControlName="password" 
+                matInput 
+                type="password" 
+                placeholder="Password"
+            >
+            <mat-hint class="hint">Mínimo de 8 caracteres</mat-hint>
+        </mat-form-field>
+    
+        <!-- ERROR PASSWORD -->
+            <div class="error-container" *ngIf="Password?.errors && Password?.touched">
+                <mat-error 
+                    class="error" 
+                    *ngIf="Password?.hasError('required')"
+                >Ingrese una contraseña</mat-error>
+                <mat-error 
+                    class="error" 
+                    *ngIf="Password?.errors?.['minlength']"
+                >La contraseña debe tener al menos 8 caracteres</mat-error>
+            </div>
+    </div>
+
+    <button 
+        mat-flat-button 
+        color="primary" 
+        class="form-button" 
+        type="submit"
+    >REGISTRARSE</button>
+    </form>
+    <div class="container-footer">
+        <a routerLink="/login">¿Ya estás registrado?</a>
+    </div>
+</div>
+
