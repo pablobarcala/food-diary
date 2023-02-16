@@ -1,1 +1,60 @@
-<p>food-edit works!</p>
+<div class="dialog-container">
+    <div class="header">
+        <h2 mat-dialog-title>Edición</h2>
+        <button mat-flat-button color="warn" (click)="onDelete(data.food.id)">ELIMINAR</button>
+    </div>
+    <form 
+        mat-dialog-content 
+        class="form row" 
+        [formGroup]="form" 
+        (submit)="onSubmit(data.food.id)"
+    >
+        <div class="form-field col">
+            <mat-form-field>
+                <mat-label>Nombre</mat-label>
+                <input matInput type="text" placeholder="Ej: Agua" formControlName="name">
+            </mat-form-field>
+        </div>
+        <div class="form-field col">
+            <mat-form-field>
+                <mat-label>Tipo</mat-label>
+                <mat-select formControlName="type">
+                    <mat-option value="Comida">Comida</mat-option>
+                    <mat-option value="Bebida">Bebida</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="form-field col">
+            <mat-form-field>
+                <mat-label>Cantidad</mat-label>
+                <input matInput type="text" placeholder="Ej: 2 vasos" formControlName="cantidad">
+            </mat-form-field>
+        </div>
+        <div class="form-field col">
+            <mat-form-field>
+                <mat-label>Horario</mat-label>
+                <mat-select formControlName="timeRef">
+                    <mat-option
+                        *ngFor="let time of times"
+                        value="{{time.id}}"
+                    >{{time.timeStart}} - {{time.timeEnd}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="form-field col">
+            <mat-form-field>
+                <mat-label>Descripción</mat-label>
+                <input 
+                    matInput 
+                    type="text" 
+                    formControlName="description" 
+                    placeholder="Ej: Tomé en el almuerzo"
+                >
+            </mat-form-field>
+        </div>
+        <div class="container-buttons">
+            <button mat-flat-button color="accent" type="submit">EDITAR</button>
+            <button type="button" mat-flat-button (click)="onNoClick()">CANCELAR</button>
+        </div>
+    </form>
+</div>

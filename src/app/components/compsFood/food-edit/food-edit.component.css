@@ -1,0 +1,10 @@
+.dialog-container {
+    width: 100%;
+}
+
+.header {
+    margin: 0 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

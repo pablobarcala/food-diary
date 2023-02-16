@@ -1,5 +1,13 @@
 import { Injectable } from '@angular/core';
-import { Firestore, collection, collectionData, deleteDoc, doc, setDoc, addDoc } from '@angular/fire/firestore';
+import { 
+  Firestore, 
+  collection, 
+  collectionData, 
+  deleteDoc, 
+  doc, 
+  addDoc, 
+  updateDoc 
+} from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { Food } from '../interfaces/Food';
 
@@ -22,5 +30,10 @@ export class FoodService {
   addFood(uid: any, food: Food) {
     const ref = collection(this.firestore, `user/${uid}/food`);
     return addDoc(ref, food)
+  }
+
+  editFood(id: any, uid: any, food: any) {
+    const ref = doc(this.firestore, `user/${uid}/food/${id}`);
+    return updateDoc(ref, food);
   }
 }

@@ -20,18 +20,18 @@
                 <mat-label>Horario</mat-label>
                 <mat-select formControlName="timeRef">
                     <mat-option
-                    *ngFor="let time of times" 
-                    value="{{time.id}}"
+                        *ngFor="let time of times" 
+                        value="{{time.id}}"
                     >{{time.timeStart}} - {{time.timeEnd}}</mat-option>
                 </mat-select>
             </mat-form-field>
             <mat-form-field appearance="outline" class="col-12 col-md-6">
                 <mat-label>Fecha</mat-label>
                 <input 
-                matInput 
-                [matDatepicker]="picker" 
-                formControlName="date"
-                placeholder="Ej: 14/02/2023"
+                    matInput 
+                    [matDatepicker]="picker" 
+                    formControlName="date"
+                    placeholder="Ej: 01/24/2023"
                 >
                 <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>

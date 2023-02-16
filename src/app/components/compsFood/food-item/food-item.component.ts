@@ -4,8 +4,7 @@ import { Food } from 'src/app/interfaces/Food';
 import { FOODS } from 'src/app/interfaces/mock-foods';
 import { TIMES } from 'src/app/interfaces/mock-times';
 import { Time } from 'src/app/interfaces/Time';
-import { FoodService } from 'src/app/services/food.service';
-import { FoodConfComponent } from '../food-conf/food-conf.component';
+import { FoodEditComponent } from '../food-edit/food-edit.component';
 
 @Component({
   selector: 'app-food-item',
@@ -18,24 +17,18 @@ export class FoodItemComponent{
   @Input() uid: any;
 
   constructor(
-    private dialog: MatDialog, 
-    private foodService: FoodService
+    private dialog: MatDialog
   ){
   }
   
-  openDialog(name: string | undefined, id: any) {
-    const dialog = this.dialog.open(FoodConfComponent, {
+  openDialog(food: Food) {
+    const dialog = this.dialog.open(FoodEditComponent, {
       data: {
-        name: name,
-      }
-    });
-    
-    dialog.afterClosed().subscribe(response => {
-      if(response) {
-        this.foodService.deleteFood(id, this.uid)
-        .then()
-        .catch(error => console.log(error));
+        food: food,
+        uid: this.uid
       }
     })
+
+    dialog.afterClosed().subscribe(resp => console.log(resp))
   }
 }

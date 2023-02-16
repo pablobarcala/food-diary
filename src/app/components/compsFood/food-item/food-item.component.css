@@ -10,8 +10,12 @@
     font-size: 0.8rem;
 }
 
-.icon {
+.icon-item {
     margin-right: 1rem;
+}
+
+.icon-edit {
+    cursor: pointer;
 }
 
 .title {
@@ -30,8 +34,4 @@
 
 .content {
     margin-bottom: 1rem;
-}
-
-.button {
-    margin-right: 1rem;
 }
