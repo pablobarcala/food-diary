@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Food } from 'src/app/interfaces/Food';
 import { FOODS } from 'src/app/interfaces/mock-foods';
@@ -27,7 +27,6 @@ export class FoodItemComponent{
     const dialog = this.dialog.open(FoodConfComponent, {
       data: {
         name: name,
-        id: id
       }
     });
     

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { collection, collectionData, Firestore } from '@angular/fire/firestore';
+import { collection, collectionData, deleteDoc, doc, Firestore } from '@angular/fire/firestore';
 import { Time } from '../interfaces/Time';
 import { Observable } from 'rxjs';
 
@@ -13,5 +13,10 @@ export class TimeService {
   getTime(uid: any): Observable<Time[]> {
     const ref = collection(this.firestore, `user/${uid}/time`);
     return collectionData(ref, {idField: 'id'}) as Observable<Time[]>;
+  }
+
+  deleteTime(id: any, uid: any) {
+    const ref = doc(this.firestore, `user/${uid}/time/${id}`);
+    return deleteDoc(ref);
   }
 }

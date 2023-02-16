@@ -17,13 +17,15 @@ import { FoodItemComponent } from './components/compsFood/food-item/food-item.co
 import { AboutComponent } from './components/about/about.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
-import { TimesComponent } from './components/times/times.component';
+import { TimesComponent } from './components/compsTime/times/times.component';
 import { AddFoodComponent } from './components/compsFood/add-food/add-food.component';
 import { LogoutConfComponent } from './components/logout-conf/logout-conf.component';
 import { FoodEditComponent } from './components/compsFood/food-edit/food-edit.component';
 import { FoodConfComponent } from './components/compsFood/food-conf/food-conf.component';
 import { CustomDatePipe } from './pipes/custom-date.pipe';
 import { DatePipe } from '@angular/common';
+import { TimeItemComponent } from './components/compsTime/time-item/time-item.component';
+import { TimeConfComponent } from './components/compsTime/time-conf/time-conf.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import { DatePipe } from '@angular/common';
     LogoutConfComponent,
     FoodEditComponent,
     FoodConfComponent,
-    CustomDatePipe
+    CustomDatePipe,
+    TimeItemComponent,
+    TimeConfComponent
   ],
   imports: [
     BrowserModule,
