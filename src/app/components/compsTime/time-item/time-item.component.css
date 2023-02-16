@@ -11,9 +11,3 @@
     align-items: center;
     justify-content: space-between;
 }
-
-.container-buttons {
-    width: 30%;
-    display: flex;
-    justify-content: space-between;
-}

@@ -7,9 +7,15 @@
         </mat-card-header>
         <mat-card-content class="card-content">
             <p>Horario: {{time.timeStart}} - {{time.timeEnd}}</p>
-            <div class="container-buttons">
-                <button class="button" mat-flat-button color="accent">EDITAR</button>
-                <button class="button" mat-flat-button color="warn" (click)="openDialog(time.name, time.id)">ELIMINAR</button>
+            <div>
+                <mat-icon>edit</mat-icon>
+                <!-- <button class="button" mat-flat-button color="accent">EDITAR</button>
+                <button 
+                    class="button" 
+                    mat-flat-button 
+                    color="warn" 
+                    (click)="openDialog(time.name, time.id)"
+                >ELIMINAR</button> -->
             </div>
         </mat-card-content>
     </mat-card>

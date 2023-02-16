@@ -29,7 +29,6 @@ export class FoodsComponent implements OnInit{
   ngOnInit() {
     this.timeService.getTime(this.uid).subscribe(data => this.times = data)
     this.getFoods();
-    console.log(this.foodTime)
   }
   
   getFoods() {

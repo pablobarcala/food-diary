@@ -8,28 +8,30 @@
                     <h2 class="title">{{food.name}}</h2>
                 </mat-panel-title>
                 <mat-panel-description class="description">{{food.type}}</mat-panel-description>
+                <div class="time-container">{{time.timeStart}} - {{time.timeEnd}}</div>
             </mat-expansion-panel-header>
             <div class="panel-content row">
-                <div class="col-2 content">
+                <div class="col-6 content">
                     <h2>Cantidad</h2>
                     <p>{{food.cantidad}}</p>
                 </div>
-                <div class="col-10 content" *ngIf="food.description !== ''">
-                    <h2>Descripción</h2>
-                    <p>{{food.description}}</p>
-                </div>
-                <div class="col-10 content">
+                <div class="col-6 content">
                     <h2>Horario</h2>
                     <p *ngIf="time">{{time.name}}</p>
                 </div>
-                <div class="col-12 content">
-                    <button class="button" mat-flat-button color="accent">Editar</button>
+                <div class="col-11 content" *ngIf="food.description !== ''">
+                    <h2>Descripción</h2>
+                    <p>{{food.description}}</p>
+                </div>
+                <div class="col-1 content">
+                    <mat-icon>edit</mat-icon>
+                    <!-- <button class="button" mat-flat-button color="accent">Editar</button>
                     <button 
                         class="button" 
                         mat-flat-button 
                         color="warn" 
                         (click)="openDialog(food.name, food.id)"
-                    >Eliminar</button>
+                    >Eliminar</button> -->
                 </div>
             </div>
         </mat-expansion-panel>

@@ -2,6 +2,14 @@
     margin: 0.5rem 0;
 }
 
+.time-container {
+    padding: 0.3rem;
+    background-color: rgb(224, 241, 255);
+    border-radius: 5px;
+    margin-right: 1rem;
+    font-size: 0.8rem;
+}
+
 .icon {
     margin-right: 1rem;
 }
