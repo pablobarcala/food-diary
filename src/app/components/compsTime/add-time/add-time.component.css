@@ -7,8 +7,8 @@
     padding-top: 0;
 }
 
-.container-button {
+.container-buttons {
     margin: 1rem 0;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
 }

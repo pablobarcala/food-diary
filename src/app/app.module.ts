@@ -26,6 +26,7 @@ import { CustomDatePipe } from './pipes/custom-date.pipe';
 import { DatePipe } from '@angular/common';
 import { TimeItemComponent } from './components/compsTime/time-item/time-item.component';
 import { TimeConfComponent } from './components/compsTime/time-conf/time-conf.component';
+import { AddTimeComponent } from './components/compsTime/add-time/add-time.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { TimeConfComponent } from './components/compsTime/time-conf/time-conf.co
     FoodConfComponent,
     CustomDatePipe,
     TimeItemComponent,
-    TimeConfComponent
+    TimeConfComponent,
+    AddTimeComponent
   ],
   imports: [
     BrowserModule,

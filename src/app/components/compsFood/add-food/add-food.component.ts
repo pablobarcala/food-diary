@@ -38,7 +38,6 @@ export class AddFoodComponent implements OnInit{
     this.foodService.addFood(this.uid, this.form.value)
     .then(() => this.router.navigate(['home']))
     .catch(error => console.log(error));
-    console.log(this.form.value.date);
   }
 
   ngOnInit(): void {

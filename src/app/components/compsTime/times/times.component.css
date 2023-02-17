@@ -1,3 +1,16 @@
 div {
     padding: 1rem;
 }
+
+.container-icon {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.icon {
+    transform: scale(2.5);
+    color: rgb(135, 196, 168);
+    cursor: pointer;
+    margin-right: 1rem;
+    margin-bottom: 0.5rem;
+}

@@ -11,20 +11,20 @@
                 <div class="time-container">{{time.timeStart}} - {{time.timeEnd}}</div>
             </mat-expansion-panel-header>
             <div class="panel-content row">
-                <div class="col-6 content">
+                <div class="col-5 content">
                     <h2>Cantidad</h2>
                     <p>{{food.cantidad}}</p>
                 </div>
-                <div class="col-6 content">
+                <div class="col-5 content">
                     <h2>Horario</h2>
                     <p *ngIf="time">{{time.name}}</p>
                 </div>
-                <div class="col-11 content" *ngIf="food.description !== ''">
-                    <h2>Descripción</h2>
-                    <p>{{food.description}}</p>
-                </div>
                 <div class="col-1 content">
                     <mat-icon class="icon-edit" (click)="openDialog(food)">edit</mat-icon>
+                </div>
+                <div class="col-12 content" *ngIf="food.description !== ''">
+                    <h2>Descripción</h2>
+                    <p>{{food.description}}</p>
                 </div>
             </div>
         </mat-expansion-panel>

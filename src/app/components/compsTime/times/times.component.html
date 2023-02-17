@@ -1,4 +1,10 @@
 <div>
+    <div class="container-icon">
+        <mat-icon
+            class="icon"
+            routerLink="/home/new-time"
+        >add_circle</mat-icon>
+    </div>
     <app-time-item
         *ngFor="let time of times"
         [time]="time"

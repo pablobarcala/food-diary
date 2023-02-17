@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="title">
+        <h2>Nuevo horario</h2>
+    </div>
+    <form [formGroup]="form" (submit)="onSubmit()">
+        <div class="row">
+            <mat-form-field class="col-12" appearance="outline">
+                <mat-label>Nombre</mat-label>
+                <input formControlName="name" matInput type="text" placeholder="Ej: Mañana">
+            </mat-form-field>
+            <mat-form-field class="col-6" appearance="outline">
+                <mat-label>Hora inicio</mat-label>
+                <input formControlName="timeStart" matInput type="time" placeholder="Ej: 08:00">
+            </mat-form-field>
+            <mat-form-field class="col-6" appearance="outline">
+                <mat-label>Hora cierre</mat-label>
+                <input formControlName="timeEnd" matInput type="time" placeholder="Ej: 12:00">
+            </mat-form-field>
+        </div>
+        <div class="container-buttons">
+            <button
+                type="submit"
+                mat-raised-button
+                color="primary"
+            >AGREGAR</button>
+            <button
+                type="button"
+                mat-raised-button
+                routerLink="/home/times"
+            >CANCELAR</button>
+        </div>
+    </form>
+</div>

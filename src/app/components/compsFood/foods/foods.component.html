@@ -1,5 +1,5 @@
 <div>
-    <form [formGroup]="form">
+    <form [formGroup]="form" class="form">
         <mat-form-field >
             <input 
                 matInput 
@@ -10,6 +10,10 @@
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
+        <mat-icon 
+            class="icon"
+            routerLink="new-item"    
+        >add_circle</mat-icon>
     </form>
     <app-food-item
         *ngFor="let item of filterFoodDate()"

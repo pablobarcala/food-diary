@@ -29,6 +29,6 @@ export class FoodItemComponent{
       }
     })
 
-    dialog.afterClosed().subscribe(resp => console.log(resp))
+    dialog.afterClosed().subscribe()
   }
 }
