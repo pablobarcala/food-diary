@@ -7,7 +7,7 @@ export const FOODS: Food[] = [
         type: 'comida',
         cantidad: '2',
         description: 'Comí con ensaladas',
-        date: '2023-02-11',
+        date: new Date(),
         timeRef: '1',
         uid: '12345'
     }

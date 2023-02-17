@@ -1,6 +1,18 @@
 <div>
+    <form [formGroup]="form">
+        <mat-form-field >
+            <input 
+                matInput 
+                [matDatepicker]="picker" 
+                placeholder="Selecciona una fecha"
+                formControlName="date"
+            >
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+    </form>
     <app-food-item
-        *ngFor="let item of foodTime"
+        *ngFor="let item of filterFoodDate()"
         [food]="item.food"
         [time]="item.time"
         [uid]="uid"

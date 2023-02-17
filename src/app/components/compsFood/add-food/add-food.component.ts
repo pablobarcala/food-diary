@@ -28,7 +28,7 @@ export class AddFoodComponent implements OnInit{
       type: ['', [Validators.required]],
       cantidad: ['', [Validators.required]],
       description: [''],
-      date: ['', [Validators.required]],
+      date: [new Date(), [Validators.required]],
       timeRef: ['', [Validators.required]]
     });
     this.uid = this.authService.getUid();
@@ -38,6 +38,7 @@ export class AddFoodComponent implements OnInit{
     this.foodService.addFood(this.uid, this.form.value)
     .then(() => this.router.navigate(['home']))
     .catch(error => console.log(error));
+    console.log(this.form.value.date);
   }
 
   ngOnInit(): void {
